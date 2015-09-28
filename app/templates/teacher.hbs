@@ -1,1 +1,11 @@
 {{outlet}}
+
+<h1>Current Questions</h1>
+
+<div class="row">
+  {{#each model as |ticket|}}
+    <div class="col-md-3 ticket-display">
+      {{#linkTo 'ticket' ticket.id}}<h2>{{ticket.question}}</h2>{{/linkTo}}
+    </div>
+  {{/each}}
+</div>

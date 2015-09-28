@@ -1,19 +1,24 @@
 {{yield}}
-
-<h1>Submit your ticket!</h1>
-<form>
-  <div class="form-group">
-    <label for="name">Your Name</label>
-    {{input id="name" value=name class="form-control"}}
-  </div>
-  <div class="form-group">
-    <label for="question">Your Question</label>
-    {{input id="question" value=question class="form-control"}}
-  </div>
-  <div class="form-group">
-    <label for="subject">What About?</label>
-    {{input id="subject" value=subject class="form-control"}}
-  </div>
-  {{input id="timeSubmitted" value="{{time-submitted}}" type="hidden"}}
-  <button class="btn btn-primary btn-lg" type="submit" {{action "createTicket"}}>Submit</button>
-</form>
+{{#if newTicketForm}}
+  <h1>Submit your ticket!</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      {{input id="name" value=name class="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="question">Your Question</label>
+      {{input id="question" value=question class="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="subject">What About?</label>
+      {{input id="subject" value=subject class="form-control"}}
+    </div>
+    {{input id="timeSubmitted" value="{{time-submitted}}" type="hidden"}}
+    <button class="btn btn-primary btn-lg" type="submit" {{action "createTicket"}}>Submit</button>
+    {{#linkTo 'index'}}<button class="btn btn-warning btn-lg">Cancel Ticket!</button>{{/linkTo}}
+  </form>
+{{else}}
+  <h2>Help is on the way!</h2>
+  <button class="btn btn-danger btn-lg" {{action "deleteTicket"}}>Nevermind, We don't need you...</button>
+{{/if}}

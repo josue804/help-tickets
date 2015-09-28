@@ -1,0 +1,6 @@
+<div class="col-md-3">
+  <h2>{{ticket.question}}</h2>
+  <p><em>{{ticket.name}} - {{ticket.subject}}</em></p>
+  <p>Submitted at: {{ticket.timeSubmitted}}</p>
+  <button class="btn btn-danger btn-lg" {{action "deleteTicket" ticket}}>Problem Solved!</button>
+</div>

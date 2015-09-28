@@ -6,3 +6,9 @@
 .jvjs-header {
   text-align: center;
 }
+
+.ticket-display {
+  background-color: #eee !important;
+  border-radius: 5px;
+  margin: 20px;
+}
